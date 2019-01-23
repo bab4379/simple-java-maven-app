@@ -12,7 +12,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'mvn -B -DskipTests clean package' 
-                sh 'terraform -version' 
+                sh '/usr/local/bin/terraform -version' 
             }
         }
 	stage('Test') {
