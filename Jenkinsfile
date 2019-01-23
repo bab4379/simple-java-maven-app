@@ -13,7 +13,8 @@ pipeline {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
 		sh 'printenv | grep PATH'
-		sh 'terraform version'
+		sh 'which terraform'
+		sh 'terraform --version'
             }
         }
 	stage('Test') {
