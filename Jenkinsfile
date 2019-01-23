@@ -6,7 +6,9 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-		sh 'terraform --version'
+		withEnv(['PATH+EXTRA=/usr/local/bin']) {
+			sh 'terraform --version'
+		}
             }
         }
     }
